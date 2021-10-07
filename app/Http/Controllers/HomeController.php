@@ -9,7 +9,17 @@ class HomeController extends Controller
 {
     public function index()
     {
-        return view('home');
+        return view('index');
+    }
+
+    public function services()
+    {
+        return view('services');
+    }
+
+    public function about()
+    {
+        return view('about');
     }
 
     public function redirects()
@@ -19,7 +29,7 @@ class HomeController extends Controller
         if ($usertype == 1) {
             return view('dashboard.index');
         } else {
-            return view('home');
+            return view('index');
         }
     }
 }

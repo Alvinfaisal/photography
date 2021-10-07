@@ -18,6 +18,8 @@ use App\Http\Controllers\DashboardUserController;
 
 
 Route::get("/", [HomeController::class, 'index']);
+Route::get("/services", [HomeController::class, 'services']);
+Route::get("/about", [HomeController::class, 'about']);
 
 // Route redirect after login
 Route::get("/redirects", [HomeController::class, "redirects"]);
