@@ -64,7 +64,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="role">Role</label>
-                                    <select class="form-control">
+                                    <select class="form-control" name="usertype_id">
                                         @foreach ($user_types as $user_type)
                                             <option value="{{ $user_type->id }}">
                                                 {{ $user_type->name }}

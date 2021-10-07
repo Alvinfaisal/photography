@@ -45,7 +45,6 @@ class DashboardUserController extends Controller
             'name' => 'required',
             'email' => 'required|unique:users',
             'password' => 'required|min:3',
-            'confirm-password' => 'required|min:3',
             'usertype_id' => 'required',
         ]);
 
@@ -53,7 +52,7 @@ class DashboardUserController extends Controller
 
         User::create($validatedData);
 
-        return redirect('/dashboard/users/');
+        return redirect('/dashboard/users');
     }
 
     /**
