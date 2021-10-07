@@ -61,6 +61,9 @@
                                     {{ __('Register') }}
                                 </button>
                             </div>
+                            <div class="mt-5 text-muted text-center">
+                                Sudah punya akun? <a href="/login">Login sekarang!</a>
+                            </div>
                         </form>
                     </div>
                 </div>

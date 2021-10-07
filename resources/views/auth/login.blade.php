@@ -60,7 +60,9 @@
                       {{ __('Log in') }}
                     </button>
                   </div>
-
+                  <div class="mt-5 text-muted text-center">
+                    Belum mempunyai akun? <a href="/register">Buat sekarang!</a>
+                </div>
                 </form>
               </div>
             </div>
