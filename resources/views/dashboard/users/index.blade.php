@@ -68,7 +68,8 @@
                                                         <div class="badge badge-primary">{{ $user->usertype_id }}
                                                         </div>
                                                     @else
-                                                        <div class="badge badge-danger">{{ $user->usertype_id }}</div>
+                                                        <div class="badge badge-danger">{{ $user->usertype_id }}
+                                                        </div>
                                                     @endif
                                                 </td>
                                             </tr>
