@@ -16,14 +16,16 @@
 
                             <div class="form-group">
                                 <label for="name" value="{{ __('Name') }}">Name</label>
-                                <input id="name" type="text" class="form-control" name="name" :value="old('name')" required autofocus>
+                                <input id="name" type="text" class="form-control" name="name" :value="old('name')" required
+                                    autofocus>
                                 <div class="invalid-feedback">
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <label for="email" value="{{ __('Email') }}">Email</label>
-                                <input id="email" type="email" class="form-control" name="email" :value="old('email')" required>
+                                <input id="email" type="email" class="form-control" name="email" :value="old('email')"
+                                    required>
                                 <div class="invalid-feedback">
                                 </div>
                             </div>
@@ -37,7 +39,8 @@
 
                             <div class="row">
                                 <div class="form-group col-6">
-                                    <label for="password" class="d-block" value="{{ __('Password') }}">Password</label>
+                                    <label for="password" class="d-block"
+                                        value="{{ __('Password') }}">Password</label>
                                     <input id="password" type="password" class="form-control pwstrength"
                                         data-indicator="pwindicator" name="password" required>
                                     <div id="pwindicator" class="pwindicator">
@@ -46,8 +49,10 @@
                                     </div>
                                 </div>
                                 <div class="form-group col-6">
-                                    <label for="password_confirmation" class="d-block" value="{{ __('Confirm Password') }}">Password Confirmation</label>
-                                    <input id="password_confirmation" type="password" class="form-control" name="password_confirmation">
+                                    <label for="password_confirmation" class="d-block"
+                                        value="{{ __('Confirm Password') }}">Password Confirmation</label>
+                                    <input id="password_confirmation" type="password" class="form-control"
+                                        name="password_confirmation">
                                 </div>
                             </div>
 

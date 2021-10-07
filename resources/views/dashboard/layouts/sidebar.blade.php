@@ -8,8 +8,9 @@
         </div>
         <ul class="sidebar-menu">
             <li class="menu-header">Dashboard</li>
-            <li class="active">
-                <a href="{{  url('/redirects') }}" class="nav-link"><i class="fas fa-fire"></i><span>Dashboard</span></a>
+            <li class="">
+                <a href=" {{ url('/redirects') }}" class="nav-link"><i
+                    class="fas fa-fire"></i><span>Dashboard</span></a>
             </li>
             <li>
                 <a class="nav-link" href="blank.html"><i class="fas fa-money-check"></i> <span>Pesanan</span></a>
@@ -20,8 +21,9 @@
             <li>
                 <a class="nav-link" href="blank.html"><i class="fas fa-users"></i> <span>Tim</span></a>
             </li>
-            <li>
-                <a class="nav-link" href=" {{  url('/users') }}"><i class="fas fa-user"></i> <span>User</span></a>
+            <li class="{{ Request::is('dashboard/users*') ? 'active' : '' }}">
+                <a class=" nav-link" href=" {{ url('/dashboard/users') }}"><i class="fas fa-user"></i>
+                    <span>User</span></a>
             </li>
         </ul>
     </aside>

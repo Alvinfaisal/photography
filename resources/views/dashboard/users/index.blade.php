@@ -5,7 +5,7 @@
         <div class="section-header">
             <h1>Users</h1>
             <div class="section-header-button">
-                <a href="/users/create" class="btn btn-primary">Tambah Baru</a>
+                <a href="/dashboard/users/create" class="btn btn-primary">Tambah Baru</a>
             </div>
         </div>
         <div class="section-body">
@@ -42,32 +42,39 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($data as $data)
-                                        <tr>
-                                            <td>{{ $loop->iteration }}</td>
-                                            <td>{{ $data->name }}
-                                                <div class="table-links">
-                                                    <a href="#">View</a>
-                                                    <div class="bullet"></div>
-                                                    <a href="#">Edit</a>
-                                                    <div class="bullet"></div>
-                                                    <a href="{{ url('/deleteuser',$data->id) }}" class="text-danger">Trash</a>
-                                                </div>
-                                            </td>
-                                            <td>{{ $data->email }}</td>
-                                            <td>{{ $data->created_at }}</td>
-                                            <td>
-                                                @if ($data->usertype == "user")
-                                                    <div class="badge badge-primary">{{ $data->usertype }}</div>
-                                                @else
-                                                    <div class="badge badge-danger">{{ $data->usertype }}</div>
-                                                @endif
-                                            
-                                        </td>
-                                        </tr>
+                                        @foreach ($users as $user)
+                                            <tr>
+                                                <td>{{ $loop->iteration }}</td>
+                                                <td>{{ $user->name }}
+                                                    <div class="table-links">
+                                                        <a href="/dashboard/users/{{ $user->id }}"
+                                                            class="btn btn-link">View</a>
+                                                        <div class="bullet"></div>
+                                                        <a href="#" class="btn btn-link">Edit</a>
+                                                        <div class="bullet"></div>
+                                                        <form action="/dashboard/users/{{ $user->id }}" method="post"
+                                                            class="d-inline">
+                                                            @method('delete')
+                                                            @csrf
+                                                            <button class="btn btn-link text-danger"
+                                                                onclick="return confirm('Apa anda yakin ingin?')">Trash</button>
+                                                        </form>
+                                                    </div>
+                                                </td>
+                                                <td>{{ $user->email }}</td>
+                                                <td>{{ $user->created_at }}</td>
+                                                <td>
+                                                    @if ($user->usertype_id == 1)
+                                                        <div class="badge badge-primary">{{ $user->usertype_id }}
+                                                        </div>
+                                                    @else
+                                                        <div class="badge badge-danger">{{ $user->usertype_id }}</div>
+                                                    @endif
+                                                </td>
+                                            </tr>
                                         @endforeach
                                     </tbody>
-                                    
+
                                 </table>
                             </div>
                             <div class="float-right">
@@ -130,7 +137,7 @@
                         </tr>
                       </thead>
                       <tbody>
-                        @foreach ( $data as $data )
+                        @foreach ($data as $data)
                         <tr>
                             <th>{{ $data->id }}</th>
                             <td>{{ $data->name }}</td>
@@ -139,7 +146,7 @@
 
                             
 
-                            @if($data->usertype=="0")
+                            @if ($data->usertype == '0')
                             <td><a href="{{ url('/deleteuser',$data->id) }}">Delete</a></td>
                             @else
                             <td><a href="#">Not Allowed</a></td>
@@ -156,4 +163,3 @@
            
             </div>
     </section> --}}
-
